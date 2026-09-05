@@ -1,19 +1,18 @@
-# Código base — Semana 02
+# Código base — Semana 04
 
 Esqueletos extraídos de la guía de laboratorio de esta semana.
 Los cuerpos marcados con `pass` son los que debes completar.
 
 ## Archivos Python
 
-- `bolsa_dict.py`
-- `bolsa_lista.py`
-- `test_bolsa.py`
+- `lista_arreglo.py`
+- `medicion_arreglo.py`
+- `test_lista.py`
 
 ## Otros archivos
 
 - `plantilla_01.md`
 - `plantilla_02.md`
-- `plantilla_03.md`
 
 ## Cómo trabajar
 
