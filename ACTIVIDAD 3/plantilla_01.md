@@ -1,6 +1,6 @@
 # Arreglo frente a lista enlazada
 
-## Tabla de complejidad
+### Tabla de complejidad
 | Operación          | ListaArreglo | ListaEnlazada | ¿Quién gana? |
 |--------------------|--------------|---------------|--------------|
 | obtener(i)         | O(1)         | O(n)          | Arreglo      |
@@ -12,23 +12,7 @@
 | buscar             | O(n)         | O(n)          | Empate       |
 | memoria por elem.  | 1 referencia (solo el dato, dentro del arreglo contiguo) | 2 referencias (el dato + el puntero `siguiente` de cada nodo, con overhead de asignación individual en el heap) | Arreglo |
 
-## Medición
-
-20.000 inserciones al inicio, una tras otra, en cada estructura
-(script `medir_20000.py`):
-
-```
-ListaArreglo:  20000 inserciones al inicio -> 7.4355 s total, 371.775 µs/insercion
-ListaEnlazada: 20000 inserciones al inicio -> 0.0086 s total,   0.430 µs/insercion
-```
-
-La enlazada es **~865 veces más rápida** insertando al inicio. La
-diferencia se dispara con el tamaño porque cada inserción en el
-arreglo cuesta O(n) (desplazar todo lo que ya había), y n crece en
-cada una de las 20.000 iteraciones — el costo total del experimento en
-el arreglo es, en la práctica, cuadrático en el número de inserciones.
-
-## ¿Cuál usarías para...?
+### ¿Cuál usaría para...?
 
 1. Un historial de navegación donde solo agregas y quitas del final:
    `ListaArreglo` — ambas operaciones de punta final son O(1)/O(1)
