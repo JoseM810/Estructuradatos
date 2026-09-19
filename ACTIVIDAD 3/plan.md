@@ -4,7 +4,7 @@
 ## Estructura de datos elegida para `ListaEnlazada`
 
 - **Nodo** (`nodo.py`): objeto simple con `dato` y `siguiente`. Sin
-  lógica propia de lista — su única responsabilidad es guardar un valor
+  lógica propia de lista, su única responsabilidad es guardar un valor
   y una referencia al siguiente eslabón.
 - **ListaEnlazada** (`lista_enlazada.py`): mantiene `_cabeza`, `_cola` y
   `_tamaño` como estado propio. El puntero `_cola` es la decisión de
@@ -42,13 +42,13 @@ se reengancha el nodo anterior. Ese orden está explicado con diagramas en
    pruebas contra ambas clases. No se toca al agregar `ListaEnlazada`
    (RNF-02): si el contrato estaba bien escrito en la actividad 2, pasa
    solo.
-2. **Casos extremos** (`test_extremos.py` / `test_casos_extremos.py`):
+2. **Casos extremos** (`test_casos_extremos.py`):
    pruebas específicas de `ListaEnlazada` que inspeccionan directamente
    `_cabeza` y `_cola` para verificar las invariantes IR-01/IR-02 tras
    los cuatro casos límite.
 3. **Medición de rendimiento** (`benchmark.py`): no es una prueba de
    corrección, es un experimento de medición reproducible con semilla
-   fija (`random.seed(42)`), 300 repeticiones por operación, y
+   fija, 300 repeticiones por operación, y
    reconstrucción de la lista antes de cada repetición para no
    contaminar mediciones sucesivas.
 

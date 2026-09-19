@@ -1,11 +1,11 @@
-# Constitución — Actividad 3: La lista de reproducción
+# Constitución — Actividad 3: La lista de reproducción.
 
 Principios no negociables para este proyecto. Toda decisión de diseño
 tomada en `spec.md`, `plan.md` o `task.md` debe poder justificarse contra
 estos principios; si algo los contradice, se corrige el código, no la
 constitución.
 
-## Principio 1 — El contrato manda, no la implementación
+## Principio 1 — El contrato manda, no la implementación.
 
 `ListaEnlazada` debe cumplir exactamente el mismo contrato público que
 `ListaArreglo` (mismos nombres de método, mismos argumentos, mismas
@@ -14,15 +14,15 @@ actividad anterior (`test_lista.py`) es la fuente de verdad de ese
 contrato y **no se modifica** bajo ninguna circunstancia para hacer
 pasar la implementación.
 
-## Principio 2 — Nada de estructuras prestadas por dentro
+## Principio 2 — Nada de estructuras prestadas por dentro.
 
 `ListaEnlazada` se construye únicamente con objetos `Nodo` y referencias
 explícitas (`siguiente`). Usar `list`, `dict`, `set`, `deque` o `heapq`
-de Python como reemplazo de la estructura de nodos —aunque el contrato
-externo se vea igual— invalida el ejercicio: el objetivo es entender el
+de Python como reemplazo de la estructura de nodos, aunque el contrato
+externo se vea igual, invalida el ejercicio: el objetivo es entender el
 manejo manual de punteros, no delegarlo.
 
-## Principio 3 — Toda afirmación de rendimiento se mide, no se asume
+## Principio 3 — Toda afirmación de rendimiento se mide, no se asume.
 
 Ninguna recomendación de "usa esta estructura" se acepta solo por
 notación Big O. Toda comparación de costos debe estar respaldada por una
@@ -31,14 +31,14 @@ medición reproducible (`benchmark.py`) sobre datos de tamaño realista
 intuiciones generales del tipo "las enlazadas siempre son mejores para
 insertar".
 
-## Principio 4 — Los casos extremos son parte del contrato, no un extra
+## Principio 4 — Los casos extremos son parte del contrato, no un extra.
 
 Lista vacía, lista de un elemento, borrar el primero y borrar el último
 deben estar probados explícitamente y deben pasar. Un envío que solo
 pasa el caso general y falla en algún extremo se considera incompleto,
 no "casi listo".
 
-## Principio 5 — El orden de las operaciones sobre punteros se documenta
+## Principio 5 — El orden de las operaciones sobre punteros se documenta.
 
 Cualquier método que reasigne más de una referencia (`siguiente`,
 `_cabeza`, `_cola`) debe dejar explícito, en comentario o en
@@ -46,7 +46,7 @@ Cualquier método que reasigne más de una referencia (`siguiente`,
 se invirtiera. Una reasignación de puntero sin justificación del orden
 no se considera terminada.
 
-## Principio 6 — Trazabilidad entre spec, plan, tareas y código
+## Principio 6 — Trazabilidad entre spec, plan, tareas y código.
 
 Cada entregable de código debe poder rastrearse a una tarea de
 `task.md`, cada tarea a una sección de `plan.md`, y cada sección de
