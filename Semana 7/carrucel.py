@@ -50,3 +50,11 @@ class Carrucel:
 
 ca=Carrucel()
     
+ca.insertar_final("foto1.jpg")
+ca.insertar_final("foto2.jpg")
+ca.insertar_final("foto3.jpg")
+ca.insertar_inicio("foto0.jpg")
+
+ca.mostrar_actual()
+ca.siguiente_imagen()
+ca.siguiente_imagen()
