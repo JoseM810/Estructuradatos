@@ -52,10 +52,10 @@ class Carrucel:
 
 ca=Carrucel()
     
-ca.insertar_final("foto1.jpg")
-ca.insertar_final("foto2.jpg")
-ca.insertar_final("foto3.jpg")
-ca.insertar_inicio("foto0.jpg")
+ca.insertar_final("imagenes/gato.jpg")
+ca.insertar_final("imagenes/jaguar.jpg")
+ca.insertar_final("imagenes/leon.jpg")
+ca.insertar_inicio("imagenes/tigre.jpg")
 
 ca.mostrar_actual()
 ca.siguiente_imagen()

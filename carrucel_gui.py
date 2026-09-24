@@ -47,8 +47,7 @@ class Carrucel:
     def anterior_imagen(self):
         if self.actual is None:
             return
-        # Como solo enlazamos "siguiente", para retroceder recorremos
-        # el círculo hasta encontrar el nodo que apunta al actual.
+       
         nodo = self.actual
         while nodo.siguiente != self.actual:
             nodo = nodo.siguiente
@@ -102,8 +101,7 @@ class VentanaCarrucel:
 if __name__ == "__main__":
     ca = Carrucel()
 
-    # Reemplaza estas rutas por las de TUS imágenes reales
-    ca.insertar_final("imagenes/gato.jpg")
+ca.insertar_final("imagenes/gato.jpg")
 ca.insertar_final("imagenes/jaguar.jpg")
 ca.insertar_final("imagenes/leon.jpg")
 ca.insertar_final("imagenes/pantera.jpg")

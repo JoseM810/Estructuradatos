@@ -5,25 +5,24 @@ class Nodo:
         self.anterior = anterior
         self.siguiente = siguiente
 
-class listaEnlazada:
+class ListaEnlazada:
      
      def __init__(self):
          self.cabeza = None
          self.cola = None
-         self.siguiente = None
 
-     def hacer (self,dato):
-        self.dato= nuevo
+     def hacer(self, dato):
+        nuevo = Nodo(dato)
 
         if self.cabeza is None:
-            nuevo= self.cabeza
-            nuevo = self.cola
+            self.cabeza = nuevo
+            self.cola = nuevo
         else:
+            nuevo.anterior = self.cola
             self.cola.siguiente = nuevo
-            self.nuevo.anterior = self.cola
             self.cola = nuevo
 
-     def deshacer (self, dato):
+     def deshacer(self):
 
         if self.cabeza is None:
             print("No hay nada que deshacer")
@@ -36,9 +35,31 @@ class listaEnlazada:
             self.cola = None
         else:
             self.cola = self.cola.anterior
-            self.siguiente = None
+            self.cola.siguiente = None
 
         return nodo_eliminado.dato
+
+     def mostrar(self):
+        if self.cabeza is None:
+            print("La lista está vacía.")
+            return
+        nodo = self.cabeza
+        elementos = []
+        while nodo is not None:
+            elementos.append(str(nodo.dato))
+            nodo = nodo.siguiente
+        print (" -> ".join(elementos))
+
+
+lista = ListaEnlazada()
+lista.hacer("primer elemento")
+lista.hacer("segundo elemento")
+lista.hacer("tercer elemento")
+lista.mostrar()
+
+deshecho = lista.deshacer()
+print(f"Deshecho: {deshecho}")
+lista.mostrar()
 
     
     
