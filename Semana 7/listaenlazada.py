@@ -22,7 +22,7 @@ class ListaEnlazada:
             self.cola.siguiente = nuevo
             self.cola = nuevo
 
-     def deshacer(self):
+     def deshacer(self):  
 
         if self.cabeza is None:
             print("No hay nada que deshacer")
