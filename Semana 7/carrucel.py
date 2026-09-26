@@ -18,12 +18,12 @@ class Carrucel:
         if self.cabeza is None:
             self.cabeza = nuevo
             self.cola = nuevo
-            self.actual = nuevo
         else:
             nuevo.siguiente = self.cabeza
             self.cabeza = nuevo
 
         self.cola.siguiente = self.cabeza
+        self.actual = nuevo
 
     def insertar_final (self, dato):
         nuevo= Nodo(dato)
@@ -58,5 +58,6 @@ ca.insertar_final("imagenes/leon.jpg")
 ca.insertar_inicio("imagenes/tigre.jpg")
 
 ca.mostrar_actual()
+ca.siguiente_imagen()
 ca.siguiente_imagen()
 ca.siguiente_imagen()
