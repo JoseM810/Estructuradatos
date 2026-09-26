@@ -10,7 +10,7 @@
 | eliminar al inicio | O(n)         | O(1)          | Enlazada     |
 | eliminar al final  | O(1)         | O(n)          | Arreglo      |
 | buscar             | O(n)         | O(n)          | Empate       |
-| memoria por elem.  | 1 referencia (solo el dato, dentro del arreglo contiguo) | 2 referencias (el dato + el puntero `siguiente` de cada nodo, con overhead de asignación individual en el heap) | Arreglo |
+| memoria por elem.  | 1 referencia (solo el dato, dentro del arreglo contiguo) | 2 referencias (el dato + el puntero `siguiente` de cada nodo) | Arreglo |
 
 ### ¿Cuál usaría para...?
 

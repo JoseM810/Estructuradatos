@@ -49,8 +49,7 @@ dos debe usar el reproductor.
 
 ## Criterios de aceptación
 
-1. `pytest -v` corre sin fallos sobre `test_lista.py`,
-   `test_extremos.py` (`test_casos_extremos.py`) y cualquier prueba
+1. `pytest -v` corre sin fallos sobre `test_lista.py`,`test_casos_extremos.py` y cualquier prueba
    adicional.
 2. Los cuatro casos extremos (lista vacía, lista de un elemento, borrar
    el primero, borrar el último) están probados y pasan.
