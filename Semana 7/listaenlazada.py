@@ -10,34 +10,44 @@ class ListaEnlazada:
      def __init__(self):
          self.cabeza = None
          self.cola = None
+         self.actual = None
 
      def hacer(self, dato):
         nuevo = Nodo(dato)
+
+        if self.actual is not None and self.actual.siguiente is not None:
+            self.actual.siguiente = None
+            self.cola = self.actual
 
         if self.cabeza is None:
             self.cabeza = nuevo
             self.cola = nuevo
         else:
-            nuevo.anterior = self.cola
+            nuevo.anterior = self.actual
             self.cola.siguiente = nuevo
             self.cola = nuevo
 
+        self.actual = nuevo
+
      def deshacer(self):  
 
-        if self.cabeza is None:
+        if self.actual is None:
             print("No hay nada que deshacer")
             return None
 
-        nodo_eliminado = self.cola
+        dato = self.actual.dato
+        self.actual = self.actual.anterior
+        return dato
 
-        if self.cola.anterior is None:
-            self.cabeza = None
-            self.cola = None
-        else:
-            self.cola = self.cola.anterior
-            self.cola.siguiente = None
+     def rehacer(self):
+         siguiente_nodo = self.cabeza if self.actual is None else self.actual.siguiente
 
-        return nodo_eliminado.dato
+         if siguiente_nodo is None:
+             print("No hay nada que rehacer")
+             return None
+
+         self.actual = siguiente_nodo
+         return self.actual.dato
 
      def mostrar(self):
         if self.cabeza is None:
@@ -61,7 +71,10 @@ deshecho = lista.deshacer()
 print(f"Deshecho: {deshecho}")
 lista.mostrar()
 
-    
+rehecho = lista.rehacer()
+print(f"Rehecho: {rehecho}")
+lista.mostrar()
+
     
 
 
