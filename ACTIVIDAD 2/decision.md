@@ -1,7 +1,6 @@
-# Decisión: ¿conviene mantener ordenado el catálogo? (Parte D)
+# Decisión: ¿conviene mantener ordenado el catálogo?
 
-Todas las cifras salen de `resultados.csv` (mediana de 7 mediciones con
-`timeit`, ejecutadas en mi PC con Windows; script `decision_calculo.py`).
+Todas las cifras salen de `resultados.csv`
 
 ## 1. Mediciones usadas (mediana, µs por llamada)
 
@@ -15,7 +14,7 @@ Todas las cifras salen de `resultados.csv` (mediana de 7 mediciones con
 | buscar_lineal (ausente = peor caso) | 76,2 | 663,3 | 5.384,9 | 12.240,3 |
 | buscar_lineal (presente, hacia la mitad = caso promedio) | 26,8 | 358,7 | 2.803,2 | 5.986,7 |
 
-### Predicción vs. medición (Parte C)
+### Predicción vs. medición
 
 - **O(n)** (`insertar` al inicio, `insertar_ordenado`, `buscar_lineal`): entre
   n = 1.000 y n = 200.000 (×200) el tiempo crece ×243, ×180, ×161 y ×223.
@@ -36,7 +35,7 @@ Todas las cifras salen de `resultados.csv` (mediana de 7 mediciones con
   modelo y lo explico con ruido: son valores de microsegundos medidos
   sobre el costo fijo de cada llamada. Aun así es dos órdenes de magnitud
   menor que `buscar_lineal`, que es lo que importa.
-- **Donde no coincidió mi predicción:** el punto de equilibrio (ver §3).
+- **Donde no coincidió mi predicción:** el punto de equilibrio.
   Predije k ≈ 1 asumiendo que desplazar un elemento y comparar un elemento
   costaban lo mismo. En mi PC desplazar cuesta ≈ 84 ns por elemento
   (6.693,9 µs / 80.000) y comparar ≈ 67 ns (5.384,9 µs / 80.000), es decir
@@ -66,18 +65,7 @@ que insertar al final (3.554,6 µs frente a 0,85 µs con 80.000), pero cada
 búsqueda ahorra ≈ 2.800 µs (2.803,2 − 2,86), y con 50 búsquedas ese ahorro
 supera ampliamente el sobrecosto.
 
-### ¿Cambia la respuesta según la época del año?
 
-**No. La conclusión es la misma en las tres épocas.**
-
-| Época | Búsquedas por inserción (k) | n = 80.000: desordenado / ordenado | n = 200.000: desordenado / ordenado |
-|---|---:|---|---|
-| Vacaciones | 5 | 14,02 ms / 3,57 ms (3,9×) | 29,94 ms / 7,98 ms (3,8×) |
-| Normal | 50 | 140,16 ms / 3,70 ms (38×) | 299,34 ms / 8,09 ms (37×) |
-| Exámenes | 300 | 840,96 ms / 4,41 ms (191×) | 1.796,01 ms / 8,72 ms (206×) |
-
-Lo que cambia con la época es **cuánto** se gana (de 4× a 200×), no **qué
-conviene**.
 
 ### Punto de equilibrio
 
@@ -101,8 +89,8 @@ O(n) y su cociente tiende a una constante.
 
 ## 4. Salvedades
 
-- Las cifras son de mi máquina y de mi intérprete; en otro equipo los
-  valores absolutos cambian, pero las razones (≈ 38×, k* ≈ 1,3) deberían
+- Las cifras son de mi máquina; en otro equipo los
+  valores cambian, pero las razones (≈ 38×, k* ≈ 1,3) deberían
   mantenerse en orden de magnitud.
 - Hay ruido visible en las operaciones de microsegundos (`obtener`,
   `insertar_final`, `buscar_binaria`); no afecta la decisión porque la
@@ -110,5 +98,3 @@ O(n) y su cociente tiende a una constante.
 - La inserción ordenada se midió en la posición media. Si los libros nuevos
   llegan con códigos crecientes y entran al final, insertar_ordenado cuesta
   O(1) y la ventaja del ordenado sería todavía mayor.
-- Ordenar un catálogo ya existente cuesta una sola vez; no se incluyó porque
-  la pregunta compara el costo de mantener cada opción libro a libro.
