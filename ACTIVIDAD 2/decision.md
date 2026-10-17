@@ -65,6 +65,15 @@ que insertar al final (3.554,6 µs frente a 0,85 µs con 80.000), pero cada
 búsqueda ahorra ≈ 2.800 µs (2.803,2 − 2,86), y con 50 búsquedas ese ahorro
 supera ampliamente el sobrecosto.
 
+### ¿Cambia la respuesta según la época del año?
+
+**No. La conclusión es la misma en las tres épocas.**
+
+| Época | Búsquedas por inserción (k) | n = 80.000: desordenado / ordenado | n = 200.000: desordenado / ordenado |
+|---|---:|---|---|
+| Vacaciones | 5 | 14,02 ms / 3,57 ms (3,9×) | 29,94 ms / 7,98 ms (3,8×) |
+| Normal | 50 | 140,16 ms / 3,70 ms (38×) | 299,34 ms / 8,09 ms (37×) |
+| Exámenes | 300 | 840,96 ms / 4,41 ms (191×) | 1.796,01 ms / 8,72 ms (206×) |
 
 
 ### Punto de equilibrio
