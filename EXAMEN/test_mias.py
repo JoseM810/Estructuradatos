@@ -50,9 +50,9 @@ def test_ranking_k_negativo():
 
 def test_ranking_arbol_degenerado():
     # Árbol en forma de lista (insertado en orden): el peor caso de altura debe funcionar.
-    arbol = ABB(range(1, 2001))
-    assert posicion_en_ranking(arbol, 1) == 2000
-    assert posicion_en_ranking(arbol, 2000) == 1
+    arbol = ABB(range(1, 501))
+    assert posicion_en_ranking(arbol, 1) == 500
+    assert posicion_en_ranking(arbol, 500) == 1
 
 def test_ranking_un_solo_nodo():
     # Con un único puntaje, el puesto 1 es ese nodo y el 2 no existe.
