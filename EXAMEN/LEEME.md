@@ -6,7 +6,7 @@
 4. Ejecuta `python -m pytest -v` hasta que todo pase.
 5. Sube a D2L `solucion.py` y `test_mias.py`.
 
-
+Sin internet, sin IA sin codigo de compañeros.
 
 | Criterio (por ejercicio, 30 pts) | Peso |
 |---|---|
