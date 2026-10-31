@@ -5,6 +5,9 @@ Listado por niveles: iterativo, con la cola propia (sin collections.deque).
 """
 
 
+from cola_prioridad import Cola  # cola propia de la Parte A
+
+
 class Carpeta:
     def __init__(self, nombre, entregas=0):
         self.nombre = nombre
@@ -17,38 +20,11 @@ class Carpeta:
 
 
 # ---------------------------------------------------------------- estructuras
+# La Cola es la construida en la Parte A (cola_prioridad.py).
 class _Nodo:
     def __init__(self, dato):
         self.dato = dato
         self.sig = None
-
-
-class Cola:
-    """FIFO con nodos enlazados. Reemplázala por la cola de tu Parte A."""
-
-    def __init__(self):
-        self._frente = None
-        self._final = None
-
-    def esta_vacia(self):
-        return self._frente is None
-
-    def encolar(self, dato):
-        nodo = _Nodo(dato)
-        if self._final is None:
-            self._frente = self._final = nodo
-        else:
-            self._final.sig = nodo
-            self._final = nodo
-
-    def desencolar(self):
-        if self._frente is None:
-            raise IndexError("cola vacía")
-        dato = self._frente.dato
-        self._frente = self._frente.sig
-        if self._frente is None:
-            self._final = None
-        return dato
 
 
 class Pila:
